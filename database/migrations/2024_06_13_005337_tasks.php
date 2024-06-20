@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('table_tasks', function (Blueprint $table) {
             $table->id();
-            //$table->biginteger('user_id');
+            $table->bigInteger('user_id');
+            $table->string('name', 50);
             $table->string('title', 50);
-            $table->string('desc', 200);
+            $table->string('description', 255)->nullable();
+            $table->string('category',50);
             $table->boolean('status');
             $table->timestamps();
 
-            //$table->foreign('user_id')->references('id')->on('table_user');
-            $table->foreignId('user_id')->constrained('table_user');
+            //Restrição
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
