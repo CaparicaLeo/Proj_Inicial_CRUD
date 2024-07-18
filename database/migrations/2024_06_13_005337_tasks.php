@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table_tasks', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
-            $table->string('name', 50);
             $table->string('title', 50);
             $table->string('description', 255)->nullable();
             $table->string('category',50);

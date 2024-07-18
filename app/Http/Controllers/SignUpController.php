@@ -16,7 +16,13 @@ class SignUpController extends Controller
             'password' => ['required']
         ]);
 
-        User::create($validated);
+        User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'cpf' => $validated['cpf'],
+            'birth_date' => $validated['birthDate'],
+            'password' => $validated['password']
+        ]);
 
         return redirect()->route('login');
     }
