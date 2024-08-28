@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email', 50);
             $table->string('password',72);
             $table->string('cpf', 11);
-            $table->date('birth_date');
+            $table->date('birth date');
             $table->timestamps();
             //restrições
             $table->unique('email');

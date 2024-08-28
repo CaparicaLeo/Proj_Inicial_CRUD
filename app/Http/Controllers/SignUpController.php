@@ -15,13 +15,12 @@ class SignUpController extends Controller
             'birthDate' => ['required','date'],
             'password' => ['required']
         ]);
-
         User::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'cpf' => $validated['cpf'],
-            'birth_date' => $validated['birthDate'],
-            'password' => $validated['password']
+            'name'=>$validated['name'],
+            'email'=>$validated['email'],
+            'cpf'=>$validated['cpf'],
+            'birth date'=>$validated['birthDate'],
+            'password'=>$validated['password'],
         ]);
 
         return redirect()->route('login');

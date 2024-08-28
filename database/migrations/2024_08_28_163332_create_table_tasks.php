@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->string('title', 50);
-            $table->string('description', 255)->nullable();
+            $table->biginteger('user_id');
             $table->string('category',50);
+            $table->string('title', 50);
+            $table->string('description', 200)->nullable;
             $table->boolean('status');
             $table->timestamps();
 
-            //Restrição
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_tasks');
+        Schema::dropIfExists('tasks');
     }
 };
